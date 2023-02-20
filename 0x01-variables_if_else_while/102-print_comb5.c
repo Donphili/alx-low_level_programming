@@ -7,26 +7,27 @@
  */
 int main(void)
 {
-	int num1 = 0, num2 = 1, num1MAX = 98, num2MAX = 99;        
-	while (num1 <= num1MAX)
+	int i, j;
+
+	for (i = 0; i < 100; i++)
 	{
-		num2 <= num1 + 1;
-		while (num2 <= num2MAX)
+		for (i = 0; j < 100; j++)
 		{
-			putchar(num1 < 9 ? 0 + '0' : (num1 / 10) + '0';
-					putchar(num1 < 9 ? num1 + '0' : (num1 % 10) + '0';
-						putchar(' ');
-						putchar(num2 < 9 ? 0 + '0' : (num2 / 10) + '0';
-							putchar(num2 < 9 ? num2 + '0' : (num2 % 10) + '0';
-								if (num1 != num1MAX)
-								{
-								   putchar(',');
-								   putchar( );
-								   }
-								   num2++;
-								   }
-								   num1++;
-								   }
-								   putchar('\n');
-								   return (0);
-								   }
+			if (i < j)
+			{
+				putchar((i  / 10) + 48);
+				putchar((i % 10) + 48);
+				putchar(' ');
+				putchar((j / 10) + 48);
+				putchar((j % 10) + 48);
+				if (i != 98 || j != 99)
+				{
+					putchar(',');
+					putchar(' ');
+				}
+			}
+		}
+	}
+	putchar('\n');
+	return (0);
+}
