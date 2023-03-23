@@ -24,7 +24,7 @@ break;
 case 'i':
 printf("%s%d", sep, va_arg(list, int));
 break;
-case 'f'
+case 'f':
 printf("%s%f", sep, va_arg(list, double));
 break;
 case 's':
