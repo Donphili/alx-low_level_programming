@@ -170,7 +170,7 @@ printf("<unknown: %x>\n", e_ident[EI_OSABI]);
 * print_abi - Prints the ABI version of an ELF header.
 * @e_ident: A pointer to an array containing the ELF ABI version.
 */
-void print_abi(unsigned char *e_ident);
+void print_abi(unsigned char *e_ident)
 {
 printf("  ABI Version:                       %d\n", e_ident[EI_ABIVERSION]);
 }
@@ -180,7 +180,7 @@ printf("  ABI Version:                       %d\n", e_ident[EI_ABIVERSION]);
 * @e_type: The ELF type.
 * @e_ident: A pointer to an array containing the ELF class.
 */
-void print_type(unsigned int e_type, unsigned char *e_ident);
+void print_type(unsigned int e_type, unsigned char *e_ident)
 {
 if (e_ident[EI_DATA] == ELFDATA2MSB)
 e_type >>= 8;
@@ -214,7 +214,7 @@ printf("<unknown: %x>\n", e_type);
 */
 void print_entry(unsigned long int e_entry, unsigned char *e_ident);
 {
-printf("  Entry point address:               ");
+printf("  Entry point address:               ")
 if (e_ident[EI_DATA] == ELFDATA2MSB)
 {
 e_entry = ((e_entry << 8) & 0xFF00FF00) |
@@ -232,7 +232,7 @@ printf("%#lx\n", e_entry);
 * @elf: The file descriptor of the ELF file.
 * Description: If the file cannot be closed - exit code 98.
 */
-void close_elf(int elf);
+void close_elf(int elf)
 {
 if (close(elf) == -1)
 {
